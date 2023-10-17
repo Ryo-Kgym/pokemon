@@ -27,6 +27,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: pokemon/pokemon-core
+          branch: main
       - uses: actions/setup-java@v3
         with:
           java-version: '17'
