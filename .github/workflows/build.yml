@@ -5,6 +5,11 @@ name: Build
 on:
   # ここでは変更がpushされたときをイベントとして指定。
   push:
+    branches:
+      - main
+      - release/**
+      - hotfix/**
+      - feature/**
     paths:
       - 'pokemon-core/**'
 
