@@ -26,9 +26,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          repository: pokemon/pokemon-core
+          repository: pokemon
           path: pokemon-core
-          token: ${{ secrets.REPO_ACCESS_TOKEN }}
           branch: ${{ github.event.repository.default_branch }}
       - uses: actions/setup-java@v3
         with:
