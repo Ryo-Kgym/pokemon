@@ -12,7 +12,7 @@ on:
     branches:
       - '**'
     paths:
-      - "pokemon-core/**"
+      - "/pokemon-core"
 
   pull_request:
     branches:
