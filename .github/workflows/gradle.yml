@@ -28,7 +28,7 @@ jobs:
         with:
           repository: pokemon/pokemon-core
           path: pokemon-core
-          branch: "**"
+          branch: "path"
       - uses: actions/setup-java@v3
         with:
           java-version: '17'
