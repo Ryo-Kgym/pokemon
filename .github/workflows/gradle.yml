@@ -11,6 +11,8 @@ on:
   push:
     branches:
       - '**'
+    paths:
+      - "pokemon-core/**"
 
   pull_request:
     branches:
