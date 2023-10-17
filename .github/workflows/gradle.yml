@@ -26,9 +26,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
-          repository: Ryo-Kgym/pokemon/pokemon-core
-          path: pokemon-core
-          branch: ${{ github.event.repository.default_branch }}
+          repository: Ryo-Kgym/pokemon
+          path: pokemon/pokemon-core
       - uses: actions/setup-java@v3
         with:
           java-version: '17'
