@@ -14,8 +14,8 @@ class NotGoodEffectiveAttributesTest {
 
     @ParameterizedTest(name = "case {index}: {0} is not good effective to {1}")
     @MethodSource("provider")
-    void getNotGoodEffectiveAttributes(Attribute attribute, List<Attribute> expected) {
-        var actual = NotGoodEffectiveAttributes.getNotGoodEffectiveAttributes(attribute);
+    void getTarget(Attribute attribute, List<Attribute> expected) {
+        var actual = new NotGoodEffectiveAttributes().getTarget(attribute);
 
         assertThat(actual, is(expected));
     }

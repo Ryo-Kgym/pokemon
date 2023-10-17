@@ -14,8 +14,8 @@ class NoneEffectiveAttributesTest {
 
     @ParameterizedTest(name = "case {index}: {0} is not effective to {1}")
     @MethodSource("provider")
-    void getNoneEffectiveAttributes(Attribute attribute, List<Attribute> expected) {
-        var actual = NoneEffectiveAttributes.getNoneEffectiveAttributes(attribute);
+    void getTarget(Attribute attribute, List<Attribute> expected) {
+        var actual = new NoneEffectiveAttributes().getTarget(attribute);
 
         assertThat(actual, is(expected));
     }

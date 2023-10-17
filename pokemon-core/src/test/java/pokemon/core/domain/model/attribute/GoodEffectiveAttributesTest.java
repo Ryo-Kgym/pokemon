@@ -14,8 +14,8 @@ class GoodEffectiveAttributesTest {
 
     @ParameterizedTest(name = "case {index}: {0} is advantageous to {1}")
     @MethodSource("provider")
-    void getAdvantageousAttributes(Attribute attribute, List<Attribute> expected) {
-        var actual = GoodEffectiveAttributes.getGoodEffectiveAttributes(attribute);
+    void getTarget(Attribute attribute, List<Attribute> expected) {
+        var actual = new GoodEffectiveAttributes().getTarget(attribute);
 
         assertThat(actual, is(expected));
     }

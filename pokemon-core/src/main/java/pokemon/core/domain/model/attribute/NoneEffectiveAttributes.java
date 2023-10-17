@@ -1,17 +1,14 @@
 package pokemon.core.domain.model.attribute;
 
-import lombok.AccessLevel;
-import lombok.NoArgsConstructor;
-
 import java.util.Collections;
 import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class NoneEffectiveAttributes {
+public class NoneEffectiveAttributes implements EffectiveAttributes {
 
-    public static List<Attribute> getNoneEffectiveAttributes(Attribute attribute) {
+    @Override
+    public List<Attribute> getTarget(Attribute attribute) {
         return NONE_EFFECTIVE_ATTRIBUTES_MAP.getOrDefault(attribute, List.of());
     }
 
