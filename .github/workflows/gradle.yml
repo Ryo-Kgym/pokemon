@@ -28,7 +28,7 @@ jobs:
         with:
           repository: pokemon/pokemon-core
           path: pokemon-core
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.REPO_ACCESS_TOKEN }}
           branch: ${{ github.event.repository.default_branch }}
       - uses: actions/setup-java@v3
         with:
