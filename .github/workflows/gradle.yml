@@ -27,7 +27,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           repository: Ryo-Kgym/pokemon
-          path: pokemon/pokemon-core
+          path: ./pokemon-core
       - uses: actions/setup-java@v3
         with:
           java-version: '17'
