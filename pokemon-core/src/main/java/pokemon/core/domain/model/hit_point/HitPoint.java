@@ -30,4 +30,8 @@ public class HitPoint {
         var recoveredValue = this.value + recovery.getValue();
         return HitPoint.valueOf(recoveredValue);
     }
+
+    public HitPoint compareWithGetMin(HitPoint hitPoint) {
+        return HitPoint.valueOf(Math.min(this.value, hitPoint.getValue()));
+    }
 }

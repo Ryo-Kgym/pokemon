@@ -64,4 +64,21 @@ class HitPointTest {
                 Arguments.of(10, 10, 20)
         );
     }
+
+    @ParameterizedTest(name = "value: {0}, hitPoint: {1}, expected: {2}")
+    @MethodSource("compareWithGetMinProvider")
+    void compareWithGetMin(long value, long hitPoint, long expected) {
+        var hitPoint1 = HitPoint.valueOf(value);
+        var hitPoint2 = HitPoint.valueOf(hitPoint);
+        var comparedHitPoint = hitPoint1.compareWithGetMin(hitPoint2);
+        assert comparedHitPoint.getValue() == expected;
+    }
+
+    private static Stream<Arguments> compareWithGetMinProvider() {
+        return Stream.of(
+                Arguments.of(10, 5, 5),
+                Arguments.of(10, 10, 10),
+                Arguments.of(10, 15, 10)
+        );
+    }
 }
