@@ -5,6 +5,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import pokemon.core.domain.model.damage.Damage;
+import pokemon.core.domain.model.recovery.Recovery;
 
 import java.util.stream.Stream;
 
@@ -45,6 +46,22 @@ class HitPointTest {
                 Arguments.of(10, 5, 5),
                 Arguments.of(10, 10, 0),
                 Arguments.of(10, 11, 0)
+        );
+    }
+
+    @ParameterizedTest(name = "value: {0}, recovery: {1}, expected: {2}")
+    @MethodSource("recoveredByProvider")
+    void recoveredBy(long value, long recovery, long expected) {
+        var hitPoint = HitPoint.valueOf(value);
+        var recoveryValue = Recovery.valueOf(recovery);
+        var recoveredHitPoint = hitPoint.recoveredBy(recoveryValue);
+        assert recoveredHitPoint.getValue() == expected;
+    }
+
+    private static Stream<Arguments> recoveredByProvider() {
+        return Stream.of(
+                Arguments.of(10, 5, 15),
+                Arguments.of(10, 10, 20)
         );
     }
 }
